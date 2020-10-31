@@ -12,7 +12,8 @@ git clone https://github.com/Monta-sys/PScan
 
 ## Usage
 
-``` PScan  [ARG] [TARGET SITE]  [ATTACK] --[OPTION]             ATTACK:                                                             -a --adminFinder  :select panel finder attack               -p --PortScan     : select Ports Scanner attack     ARGUMENTS:                                                          -v --victimHost   : give the url adress of the target host                                                      OPTION:                                                             -t --Time_Out     :give the value of timeout in secends
+``` python 
+PScan  [ARG] [TARGET SITE]  [ATTACK] --[OPTION]             ATTACK:                                                             -a --adminFinder  :select panel finder attack               -p --PortScan     : select Ports Scanner attack     ARGUMENTS:                                                          -v --victimHost   : give the url adress of the target host                                                      OPTION:                                                             -t --Time_Out     :give the value of timeout in secends
         -i --interval     :give the interval of ports begin and end to try "exemple:
  PScan -p -v www.targetHost.com -i 23 84 "
 
