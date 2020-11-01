@@ -7,7 +7,10 @@ PScan is a little python script excitable in any compiler and terminale, builded
 Use the package manager [git] 
 
 ```
-git clone https://github.com/Monta-sys/PScan
+$ git clone https://github.com/Monta-sys/PScan
+$ cd PScan
+$ python2 PScan.py
+
 ```
 
 ## Usage
@@ -23,11 +26,6 @@ Exemple:  PScan -p -v www.hostname.com -t 0.5
         uploaded in www.github.com/Monta-sys/PScan
 
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 ```
