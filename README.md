@@ -39,5 +39,5 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 
-[Licence] (https://github.com/Monta-sys/PScan/blob/main/LICENSE) 
+[Licence](https://github.com/Monta-sys/PScan/blob/main/LICENSE) 
 ```
