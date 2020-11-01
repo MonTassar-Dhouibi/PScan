@@ -92,21 +92,11 @@ header = ['Ports']
 tab.header(header)
 tab.set_deco(tab.HEADER |tab.BORDER)
 tab.set_cols_width([8])
-tab.set_cols_align(["l"])
+tab.set_cols_align(["c"])
 tab.set_cols_dtype(['a']) # automatic
 
 
 
-
-
-"""print "\n"*2
-print "\t","#"*35
-print "\t######    [#]   AdminFinder   [#] #####   #"
-print " "*20,"[+] MonTa_Ssar [+] "
-print "\t","#"*35
-print "\n"
-print "#"*35
-print "\n"*2"""
 try:
     site = site.replace("http://","")
     print ("\tChecking website " + site + "...")
