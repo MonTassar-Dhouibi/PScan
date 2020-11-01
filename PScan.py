@@ -13,34 +13,25 @@ from datetime import datetime
 subprocess.call('clear', shell=True)
 
 msg="""\x1b[33m
-  _____   _____                 
- |  __ \ / ____|                 [#] PScan credit 
- | |__) | (___   ___ __ _ _ __       by MonTav
- |  ___/ \___ \ / __/ _` | '_ \  [#] v1.01
- | |     ____) | (_| (_| | | | | [#] -v selectRSIP
- |_|    |_____/ \___\__,_|_| |_|       """
- 
-msg2="""
-  __  __        _____      
- |  \/  |___ _ |_   _|_ _        [#] -a Panel Finder
- | |\/| / _ \ ' \| |/ _` |            
- |_|  |_\___/_||_|_|\__,_|              
-                                 [#] -p Ports Scanner
-                                 [#] www.github.com/Monta_0 
-
-\033[97m"""
-print "{:<10}\r {:<10}\r".format(msg,msg2)
+______  _____                  ___  ___          _____     
+| ___ \/  ___|                 |  \/  |         |_   _|    
+| |_/ /\ `--.  ___ __ _ _ __   | .  . | ___  _ __ | | __ _ 
+|  __/  `--. \/ __/ _` | '_ \  | |\/| |/ _ \| '_ \| |/ _` |
+| |    /\__/ / (_| (_| | | | | | |  | | (_) | | | | | (_| |
+\_|    \____/ \___\__,_|_| |_| \_|  |_/\___/|_| |_\_/\__,_|
+                                                           
+_________[+] PScan [+]_[+] V1.01 [+]_[+] By MonTa [+]_______\033[97m"""
+print "{:^}".format(msg)
 print "\x1b[49m" 
 
-
-msg3="""\033[97m\nPScan  [ARG] [TARGET SITE]  [ATTACK] --[OPTION] \n\nATTACK:\n\t-a --adminFinder  :select panel finder attack \n\t-p --PortScan     : select Ports Scanner attack\nARGUMENTS:\n\t-v --victimHost   : give the url adress of the target host\nOPTION:\n\t-t --Time_Out     :give the value of timeout in secends\n\t-i --interval     :give the interval of ports begin and end to try "exemple: \n PScan -p -v www.targetHost.com -i 23 84 "\n\nExemple:  PScan -p -v www.hostname.com -t 0.5\n\n\t\033[91m   credit by MonTassar_Dhouibi\n\tuploaded in www.github.com/Monta_0\033[97m"""
+msg3="""\033[97m\n PScan  -[ARG] [TARGET SITE] -[ATTACK] --[OPTION]\n\n[+]ARGUMENTS:\n\t-v --victimHost   : give the url adress of the target host\n\n[+]ATTACK:\n\t-a --adminFinder  :select panel finder attack \n\t-p --PortScan     : select Ports Scanner attack\n\n[+]OPTION:\n\t-t --Time_Out     :give the value of timeout in secends\n\t-i --interval     :give the interval of ports begin and end to try \n\nExemple:  PScan -v www.hostname.com -a\n\t  PScan -v www.targetHost.com -p -i 23 84 -t 0.5\n\n\t\033[91m   credit by MonTassar_Dhouibi\n\tuploaded in www.github.com/Monta_0\033[97m"""
 
 
 
 l=sys.argv
 del l[0]
 if len(l)==0:
-        print msg3
+        print "{}".format(msg3)
         exit()
 if l[0]=='-h':
 	print "{:=^48}==".format('[*] help [*]')
@@ -226,18 +217,9 @@ if a :
         except (KeyboardInterrupt, SystemExit):
             print "\n\t[!] Session cancelled"
 
-        
-
 
         t2 = datetime.now()
-
-
         total =  t2 - t1
-
-
-
-
-       
 
         print 'Scanning Completed in:      {:7.7}'.format(total)
 
