@@ -19,10 +19,10 @@ $ python2 PScan.py
 
 ## Usage
 
-``` python 
-PScan  [ARG] [TARGET SITE]  [ATTACK] --[OPTION]
+``` 
+$ ./PScan -[ARG] [TARGET SITE] -[ATTACK] --[OPTION]
 ```
-```
+``` python
 ATTACK  -a --adminFinder  :select panel finder attack               -p --PortScan     : select Ports Scanner attack     ARGUMENTS:                                                          -v --victimHost   : give the url adress of the target host                                                      OPTION:                                                             -t --Time_Out     :give the value of timeout in secends
         -i --interval     :give the interval of ports begin and end to try "exemple:
  PScan -p -v www.targetHost.com -i 23 84 "
