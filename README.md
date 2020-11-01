@@ -40,4 +40,4 @@ copies or substantial portions of the Software.
 
 
 ```
-[Licence] [
+[Licence] [https://github.com/Monta-sys/PScan/blob/main/LICENSE] 
