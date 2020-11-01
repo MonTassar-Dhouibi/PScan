@@ -91,7 +91,7 @@ tab = Texttable()
 header = ['Ports']
 tab.header(header)
 tab.set_deco(tab.HEADER |tab.BORDER)
-tab.set_cols_width([5])
+tab.set_cols_width([8])
 tab.set_cols_align(["l"])
 tab.set_cols_dtype(['a']) # automatic
 
