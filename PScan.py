@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+## Script have two attack panel finder and port scanner
 import socket
 import httplib
 import subprocess
