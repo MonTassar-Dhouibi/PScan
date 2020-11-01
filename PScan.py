@@ -4,10 +4,11 @@ import socket
 import httplib
 import subprocess
 import sys
-from datetime import datetime
 import time
 import texttable
+
 from texttable import Texttable
+from datetime import datetime
 
 subprocess.call('clear', shell=True)
 
