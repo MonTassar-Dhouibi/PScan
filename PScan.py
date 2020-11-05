@@ -117,7 +117,7 @@ except (httplib.HTTPResponse, socket.error) as Exit:
 
 
 
-def check(remoteServerIP,t_out,val_L,val_H):
+def check(remoteServerIP,t_out,val_L,val_H),table:
         try:
             t1 = datetime.now()
             varP=""
@@ -180,7 +180,7 @@ if p :
     	VL=1
     if VH==0:
     	VH=1025
-    check(RSIP,time_out,VL,VH)
+    check(RSIP,time_out,VL,VH,table)
 
 var1=0
 var2=0
