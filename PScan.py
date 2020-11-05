@@ -5,7 +5,7 @@ import httplib
 import subprocess
 import sys
 import time
-from texttable import texttable
+import texttable
 
 from texttable import Texttable
 from datetime import datetime
@@ -24,7 +24,7 @@ _________[+] PScan [+]_[+] V1.01 [+]_[+] By MonTa [+]_______\033[97m"""
 print "{:^}".format(msg)
 print "\x1b[49m" 
 
-msg3="""\033[97m\n PScan  -[ARG] [TARGET SITE] -[ATTACK] --[OPTION]\n\n[+]ARGUMENTS:\n\t-v --victimHost   : give the url adress of the target host\n\n[+]ATTACK:\n\t-a --adminFinder  :select panel finder attack \n\t-p --PortScan     : select Ports Scanner attack\n\n[+]OPTION:\n\t-t --Time_Out     :give the value of timeout in secends\n\t-i --interval     :give the interval of ports begin and end to try \n\nExemple:  PScan -v www.hostname.com -a\n\t  PScan -v www.targetHost.com -p -i 23 84 -t 0.5\n\n\t\033[91m   credit by MonTassar_Dhouibi\n\tuploaded in www.github.com/Monta_0\033[97m"""
+msg3="""\033[97m\n PScan  -[ARG] [TARGET SITE] -[ATTACK] --[OPTION]\n\n[+]ARGUMENTS:\n\t-v --victimHost   : give the url adress of the target host\n\n[+]ATTACK:\n\t-a --adminFinder  :select panel finder attack \n\t-p --PortScan     : select Ports Scanner attack\n\n[+]OPTION:\n\t-t --Time_Out     :give the value of timeout in secends\n\t-i --interval     :give the interval of ports begin and end to try \n\nExemple:  PScan -v www.hostname.com -a\n\t  PScan -v www.targetHost.com -p -i 23 84 -t 0.5\n\n\t\033[96m   credit by MonTassar_Dhouibi\n\tuploaded in www.github.com/Monta_0\033[97m"""
 
 
 
@@ -69,6 +69,10 @@ elif l[i]=='-a':
 			type=l.pop(i+1)
 			type=type.replace("-","")
 			del l[i]
+		else :
+			print "\n\033[91m[!] source code type error -s [SOURCE TYPE]  [!]\033[97m\n"
+			print msg3
+			exit()
 else:
 	print 'no such attack selected'
 	print msg3
@@ -76,16 +80,18 @@ else:
                 
 
 
-
-
-tab = Texttable()
-header = ['Ports']
-tab.header(header)
-tab.set_deco(tab.HEADER |tab.BORDER)
-tab.set_cols_width([8])
-tab.set_cols_align(["c"])
-tab.set_cols_dtype(['a']) # automatic
-
+table=True
+try :
+	tab = Texttable()
+	header = ['Ports']
+	tab.header(header)
+	tab.set_deco(tab.HEADER |tab.		BORDER)
+	tab.set_cols_width([8])
+	tab.set_cols_align(["c"])
+	tab.set_cols_dtype(['a']) # automatic
+except :
+	table = False
+	input="[\] error with text table press any key to continue without tables"
 
 
 try:
@@ -106,6 +112,7 @@ except (httplib.HTTPResponse, socket.error) as Exit:
 def check(remoteServerIP,t_out,val_L,val_H):
         try:
             t1 = datetime.now()
+            varP=""
             for port in range(val_L,val_H+1):
                 print "\033[94m[",datetime.now().strftime("%H:%M:%S"),"]","\033[97m[#] cheaking... ",remoteServerIP,":",port
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -113,14 +120,16 @@ def check(remoteServerIP,t_out,val_L,val_H):
                 result = sock.connect_ex((remoteServerIP, port))
                 if result == 0:
                     print "\n"
-                    print "\033[32m[ {} ] [++] {}/{} is Open\033[97m".format(datetime.now().strftime("%H:%M:%S"),port,socket.getservbyport(port)) 
-                    row=[str(port)+"/"+socket.getservbyport(port)] 
-                    tab.add_row(row)
+                    print "\033[32m[ {} ] [++] {}/{} is Open\033[97m".format(datetime.now().strftime("%H:%M:%S"),port,socket.getservbyport(port))
+                    varP+= str(port)+"/"+socket.getservbyport(port) + "   "
+                    if table: 
+                   	 row=[str(port)+"/"+socket.getservbyport(port)] 
+                   	 tab.add_row(row)
                     print "\n"
                     sock.close()
         except KeyboardInterrupt:
-            print "You pressed Ctrl+C"
-            sys.exit()
+        	print "\n\t[!]You pressed Ctrl+C"
+        	print "\t[!]Session cancelled..."
         except socket.gaierror:
             print 'Hostname could not be resolved. Exiting'
             sys.exit()
@@ -139,9 +148,13 @@ def check(remoteServerIP,t_out,val_L,val_H):
 
 
 
-	print('{}'.format(tab.draw()))
+	if table :
+		print('{}'.format(tab.draw()))
+	else :
+		print varP
+		
 
-	print 'Scanning Completed in:      {:7.7}'.format(total)
+	print '\tScanning Completed in:   {:7.7}'.format(total)
 
 
 
@@ -163,6 +176,7 @@ if p :
 
 var1=0
 var2=0
+varL=""
 if a :
 
         file=(open("ALL.txt","r")).readlines()
@@ -199,7 +213,8 @@ if a :
                 var2 = var2 + 1
                 if response.status == 200:
                         var1 = var1 + 1
-                        print "%s %s" % ( "\n\n[+]>>>" + host, "Admin page found!")
+                        varL+= host +"   "
+                        print "%s %s" % ( "\n\n\033[32m[+]\033[97m " + host, "\033[32mAdmin page found!\033[97m")
                         raw_input("Press enter to continue scanning.\n")
                 elif response.status == 404:
                         var2 = var2
@@ -221,6 +236,7 @@ if a :
         t2 = datetime.now()
         total =  t2 - t1
 
-        print 'Scanning Completed in:      {:7.7}'.format(total)
+        print "\n\033[32m[+] {}\033[97m".format(varL)
+        print '\tScanning Completed in:    {:7.7}'.format(total)
 
 
