@@ -9,7 +9,7 @@ import time
 
 
 
-from texttable.texttable.py import Texttable
+from texttable.texttable import Texttable
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
