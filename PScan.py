@@ -169,7 +169,7 @@ if p :
     	VL=1
     if VH==0:
     	VH=1025
-    check(RSIP,time_out,VL,VH,tab)
+    check(RSIP,time_out,VL,VH)
 
 var1=0
 var2=0
