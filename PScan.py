@@ -98,7 +98,7 @@ try :
 	tab.set_cols_dtype(['a']) # automatic
 except :
 	table = False
-	input="[\] error with text table press any key to continue without tables"
+	raw_input=("[\] error with text table press any key to continue without tables")
 else :
     table=True
 
