@@ -5,8 +5,10 @@ import httplib
 import subprocess
 import sys
 import time
-table = True
-import texttable
+
+sys.path.insert(0, '/texttable/')
+
+
 
 from texttable import Texttable
 from datetime import datetime
