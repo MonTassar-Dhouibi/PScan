@@ -81,20 +81,14 @@ else:
                 
 
 
-table=True
-try :
-	tab = Texttable()
-	header = ['Ports']
-	tab.header(header)
-	tab.set_deco(tab.HEADER |tab.		BORDER)
-	tab.set_cols_width([8])
-	tab.set_cols_align(["c"])
-	tab.set_cols_dtype(['a']) # automatic
-except :
-	table = False
-	raw_input=("[\] error with text table press any key to continue without tables")
-else :
-    table=True
+
+tab = Texttable()
+header = ['Ports']
+tab.header(header)
+tab.set_deco(tab.HEADER |tab.BORDER)
+tab.set_cols_width([8])
+tab.set_cols_align(["c"])
+tab.set_cols_dtype(['a']) # automatic
 
 try:
     site = site.replace("http://","")
@@ -111,7 +105,7 @@ except (httplib.HTTPResponse, socket.error) as Exit:
 
 
 
-def check(remoteServerIP,t_out,val_L,val_H,tab):
+def check(remoteServerIP,t_out,val_L,val_H):
         try:
             t1 = datetime.now()
             varP=""
