@@ -8,7 +8,7 @@ import time
 table = True
 import texttable
 
-#from texttable import Texttable
+from texttable import Texttable
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
