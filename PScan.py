@@ -5,7 +5,7 @@ import httplib
 import subprocess
 import sys
 import time
-import texttable
+from texttable import texttable
 
 from texttable import Texttable
 from datetime import datetime
