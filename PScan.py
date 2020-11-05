@@ -117,7 +117,7 @@ except (httplib.HTTPResponse, socket.error) as Exit:
 
 
 
-def check(remoteServerIP,t_out,val_L,val_H),table:
+def check(remoteServerIP,t_out,val_L,val_H,table):
         try:
             t1 = datetime.now()
             varP=""
