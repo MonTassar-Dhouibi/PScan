@@ -5,9 +5,12 @@ import httplib
 import subprocess
 import sys
 import time
-import texttable
+try:
+    import texttable
 
-from texttable import Texttable
+    from texttable import Texttable
+except:
+    pass
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
