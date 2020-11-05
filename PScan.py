@@ -124,9 +124,9 @@ def check(remoteServerIP,t_out,val_L,val_H,table):
                     print "\n"
                     print "\033[32m[ {} ] [++] {}/{} is Open\033[97m".format(datetime.now().strftime("%H:%M:%S"),port,socket.getservbyport(port))
                     varP+= str(port)+"/"+socket.getservbyport(port) + "   "
-                    if table: 
-                   	 row=[str(port)+"/"+socket.getservbyport(port)] 
-                   	 tab.add_row(row)
+                    
+                    row=[str(port)+"/"+socket.getservbyport(port)] 
+                    tab.add_row(row)
                     print "\n"
                     sock.close()
         except KeyboardInterrupt:
@@ -150,10 +150,10 @@ def check(remoteServerIP,t_out,val_L,val_H,table):
 
 
 
-	if table :
-		print('{}'.format(tab.draw()))
-	else :
-		print varP
+	
+        print('{}'.format(tab.draw()))
+	
+	print varP
 		
 
 	print '\tScanning Completed in:   {:7.7}'.format(total)
