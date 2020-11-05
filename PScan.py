@@ -5,6 +5,7 @@ import httplib
 import subprocess
 import sys
 import time
+import texttable
 sys.path.append('../')
 
 sys.path.insert(0, '/texttable/')
