@@ -5,12 +5,16 @@ import httplib
 import subprocess
 import sys
 import time
+table = True
 try:
     import texttable
 
     from texttable import Texttable
 except:
+    table = False
     pass
+else :
+    table=True
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
@@ -95,7 +99,8 @@ try :
 except :
 	table = False
 	input="[\] error with text table press any key to continue without tables"
-
+else :
+    table=True
 
 try:
     site = site.replace("http://","")
