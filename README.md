@@ -49,7 +49,7 @@ Exemple:  PScan -p -v www.hostname.com -t 0.5
 ```
 MIT License
 
-Copyright (c) 2020 Monta
+Copyright (c) 2020 Montassar Dhouibi 
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
