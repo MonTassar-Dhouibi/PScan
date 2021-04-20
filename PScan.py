@@ -5,9 +5,9 @@ import httplib2 as httplib
 import subprocess
 import sys
 import time
-import texttable
+#import texttable
 
-from texttable import Texttable
+#from texttable import Texttable
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
@@ -113,6 +113,7 @@ def check(remoteServerIP,t_out,val_L,val_H):
         try:
             t1 = datetime.now()
             varP=""
+            L =[]
             for port in range(val_L,val_H+1):
                 print("\033[94m[",datetime.now().strftime("%H:%M:%S"),"]","\033[97m[#] cheaking... ",remoteServerIP,":",port)
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -122,9 +123,9 @@ def check(remoteServerIP,t_out,val_L,val_H):
                     print("\n")
                     print("\033[32m[ {} ] [++] {}/{} is Open\033[97m".format(datetime.now().strftime("%H:%M:%S"),port,socket.getservbyport(port)))
                     varP+= str(port)+"/"+socket.getservbyport(port) + "   "
-                    if table: 
-                   	 row=[str(port)+"/"+socket.getservbyport(port)] 
-                   	 tab.add_row(row)
+            
+                    L.append(str(port)+"/"+socket.getservbyport(port))
+                    
                     print("\n")
                     sock.close()
         except KeyboardInterrupt:
@@ -143,10 +144,13 @@ def check(remoteServerIP,t_out,val_L,val_H):
         t2 = datetime.now()
         total =  t2 - t1
         
-        if table :
-            print('{}'.format(tab.draw()))
-        else :
-            print(varP)
+        for k in range(len(L)):
+            
+            print('{}'.format(L[k]),end="")
+            if (k+1) % 2 == 0 :
+                print("")
+        
+        print(varP)
         print('\tScanning Completed in:   {:7.7}'.format(total))
 
 
