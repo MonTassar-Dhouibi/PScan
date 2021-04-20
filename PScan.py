@@ -1,7 +1,7 @@
 #!/usr/bin/python
 ## Script have two attack [`panel finder || port scanner`]
 import socket
-import httplib2 as httplib
+import httplib2 
 import subprocess
 import sys
 import time
@@ -94,16 +94,17 @@ except :
 	input("[\] error with text table press any key to continue without tables")
 
 
-try:
-    site = site.replace("http://","")
+if 1 == 1 :
+    #site = site.replace("http://","")
     print ("\tChecking website " + site + "...")
-    conn = httplib.HTTPConnection(site)
-    conn.connect()
-    print("\t\033[32m[$] Yes... Server is Online.\033[97m")
-    RSIP  = socket.gethostbyname(site)
-except (httplib.HTTPResponse, socket.error) as Exit:
-    raw_input("\t \033[91m[!] Oops Error occured, Server offline or invalid URL\033[97m")
-    exit()
+    h = httplib2.Http()
+resp, content = h.request(site)
+    if resp.status == 200 : 
+        print("\t\033[32m[$] Yes... Server is Online.\033[97m")
+        RSIP  = socket.gethostbyname(site)
+     else :
+         input("\t \033[91m[!] Oops Error occured, Server offline or invalid URL\033[97m")
+         exit()
 
 
 
@@ -204,27 +205,27 @@ if a :
                 admin = "/" + admin
                 host = site + admin
                 print ("\t [#] Checking " + host + "...")
-                connection = httplib.HTTPConnection(site)
-                connection.request("GET",admin)
-                response = connection.getresponse()
+                h = httplib2.Http()
+                response , content = h.request(host)
+             
                 var2 = var2 + 1
-                if response.status == 200:
+                if response == 200:
                         var1 = var1 + 1
                         varL+= host +"   "
                         print("%s %s" % ( "\n\n\033[32m[+]\033[97m " + host, "\033[32mAdmin page found!\033[97m"))
                         input("Press enter to continue scanning.\n")
-                elif response.status == 404:
+                elif response == 404:
                         var2 = var2
-                elif response.status == 302:
+                elif response == 302:
                         print("%s %s" % ("\n>>>" + host, "Possible admin page (302 - Redirect)"))
                 else:
                         print("%s %s %s" % (host, " Interesting response:", response.status))
-                connection.close()
+                
             print("\n\nCompleted \n")
             print(var1, " Admin pages found")
             print(var2, " total pages scanned")
             input("[/] Press Enter to Exit")
-        except (httplib.HTTPResponse, socket.error):
+        except :
             print("\n\t[!] Session Cancelled; Error occured. Check internet settings")
         except (KeyboardInterrupt, SystemExit):
             print("\n\t[!] Session cancelled")
