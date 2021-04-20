@@ -98,11 +98,11 @@ if 1 == 1 :
     #site = site.replace("http://","")
     print ("\tChecking website " + site + "...")
     h = httplib2.Http()
-resp, content = h.request(site)
+    resp, content = h.request(site)
     if resp.status == 200 : 
         print("\t\033[32m[$] Yes... Server is Online.\033[97m")
         RSIP  = socket.gethostbyname(site)
-     else :
+    else :
          input("\t \033[91m[!] Oops Error occured, Server offline or invalid URL\033[97m")
          exit()
 
@@ -227,14 +227,11 @@ if a :
             input("[/] Press Enter to Exit")
         except :
             print("\n\t[!] Session Cancelled; Error occured. Check internet settings")
-        except (KeyboardInterrupt, SystemExit):
-            print("\n\t[!] Session cancelled")
-
+        
 
         t2 = datetime.now()
         total =  t2 - t1
 
         print("\n\033[32m[+] {}\033[97m".format(varL))
         print('\tScanning Completed in:    {:7.7}'.format(total))
-
 
