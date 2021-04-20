@@ -1,6 +1,6 @@
 # PScan
 
-PScan is a little python script excitable in any compiler and terminale, builded with python 2.7 by Montassar dhouibi. 
+PScan is a little python script excitable in any compiler and terminale, builded with python 2.X AND 3.X by Montassar dhouibi. 
 
 
 ![img](https://github.com/Monta-sys/PScan/blob/main/src/img001.jpg)
@@ -13,7 +13,7 @@ Use the package manager [git]
 ```
 $ git clone https://github.com/Monta-sys/PScan
 $ cd PScan
-$ python2 PScan.py
+$ python PScan.py
 
 ```
 
@@ -49,7 +49,7 @@ Exemple:  PScan -p -v www.hostname.com -t 0.5
 ```
 MIT License
 
-Copyright (c) 2020 Montassar Dhouibi 
+Copyright (c) 2020 Montassar Dhouibi
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
