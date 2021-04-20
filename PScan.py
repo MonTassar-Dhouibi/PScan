@@ -101,7 +101,7 @@ if 1 == 1 :
     resp, content = h.request(site)
     if resp.status == 200 : 
         print("\t\033[32m[$] Yes... Server is Online.\033[97m")
-        RSIP  = socket.gethostbyname(site)
+        RSIP  = socket.gethostbyname(site.replace("http://",""))
     else :
          input("\t \033[91m[!] Oops Error occured, Server offline or invalid URL\033[97m")
          exit()
