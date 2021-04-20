@@ -1,4 +1,4 @@
-# PScan
+O9ssem# PScan
 
 PScan is a little python script excitable in any compiler and terminale, builded with python 2.X AND 3.X by Montassar dhouibi. 
 
@@ -13,6 +13,7 @@ Use the package manager [git]
 ```
 $ git clone https://github.com/Monta-sys/PScan
 $ cd PScan
+$ pip install requirements.txt
 $ python PScan.py
 
 ```
