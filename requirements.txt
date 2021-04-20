@@ -5,5 +5,5 @@
 # By Salopss_MonTa
 #    pip-compile
 #
-texttable = 1.6.3
-httplib2 = 0.19.1
+texttable == 1.6.3
+httplib2 == 0.19.1
