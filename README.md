@@ -1,4 +1,4 @@
-O9ssem# PScan
+PScan
 
 PScan is a little python script excitable in any compiler and terminale, builded with python 2.X AND 3.X by Montassar dhouibi. 
 
